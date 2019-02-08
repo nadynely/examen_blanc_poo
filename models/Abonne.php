@@ -45,17 +45,19 @@ class Abonne extends Db {
         return $this; */
 
 
-        if (empty($_POST['prenom'])) {
-            echo formError("Le prénom doit être renseigné.");
+        if (empty($prenom)) {
+            Echo ("Le prénom doit être renseigné.");
         }
 
-        elseif(strlen($_POST['prenom']) > 150) {
-            echo formError("Le prénom ne doit pas faire plus de 150 caractères.");
+        elseif(strlen($prenom) > 150) {
+            Echo ("Le prénom ne doit pas faire plus de 150 caractères.");
         }
         else {
-            $prenom = $_POST['prenom'];
 
-            return;
+            $this->prenom = $prenom;
+
+            return $this;
+
         }
     }
 
@@ -73,17 +75,18 @@ class Abonne extends Db {
 
         return $this; */
 
-        if (empty($_POST['nom'])) {
-            echo formError("Le nom doit être renseigné.");
+        if (empty($nom)) {
+            Echo ("Le nom doit être renseigné.");
         }
 
-        elseif(strlen($_POST['nom']) > 150) {
-            echo formError("Le nom ne doit pas faire plus de 150 caractères.");
+        elseif(strlen($nom) > 150) {
+            Echo ("Le nom ne doit pas faire plus de 150 caractères.");
         }
         else {
-            $nom = $_POST['nom'];
 
-            return;
+            $this->nom = $nom;
+
+            return $this;
         }
     }
 
@@ -158,6 +161,7 @@ class Abonne extends Db {
 
             foreach ($data as $d) {
 
+                var_dump($d);
                 $objectsList[] = new Abonne($d['prenom'], $d['nom'], intval($d['id']));
             }
 

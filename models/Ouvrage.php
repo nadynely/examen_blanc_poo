@@ -44,17 +44,17 @@ class Ouvrage extends Db {
 
         return $this; */
 
-        if (empty($_POST['titre'])) {
-            echo formError("Le titre doit être renseigné.");
+        if (empty($titre)) {
+            echo ("Le titre doit être renseigné.");
         }
 
-        elseif(strlen($_POST['titre']) > 150) {
-            echo formError("Le titre ne doit pas faire plus de 150 caractères.");
+        elseif (strlen($titre) > 150) {
+            echo ("Le titre ne doit pas faire plus de 150 caractères.");
         }
         else {
-            $titre = $_POST['titre'];
+            $this->titre = $titre;
 
-            return;
+            return $this;
         }
     }
 
@@ -72,17 +72,17 @@ class Ouvrage extends Db {
 
         return $this; */
 
-        if (empty($_POST['auteur'])) {
-            echo formError("L'auteur doit être renseigné.");
+        if (empty($auteur)) {
+            echo ("L'auteur doit être renseigné.");
         }
 
-        elseif(strlen($_POST['auteur']) > 150) {
-            echo formError("Le auteur ne doit pas faire plus de 150 caractères.");
+        elseif(strlen($auteur) > 150) {
+            echo ("Le auteur ne doit pas faire plus de 150 caractères.");
         }
         else {
-            $auteur = $_POST['auteur'];
+            $this->auteur = $auteur;
 
-            return;
+            return $this;
         }
     }
 
