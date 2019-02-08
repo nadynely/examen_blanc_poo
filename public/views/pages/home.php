@@ -79,6 +79,6 @@
 </ul>
 
 
-<php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
-<php view('template', compact('content')); ?
+<?php view('template', compact('content')); ?>
